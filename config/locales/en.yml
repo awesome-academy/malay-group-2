@@ -31,3 +31,25 @@
 
 en:
   hello: "Hello world"
+
+  layouts:
+    application:
+      title: "Online Courses"
+      login: "Log In"
+
+  static_pages:
+    home:
+      homepages: "Home"
+      title: "Online Courses"
+      description: "Welcome to Online Courses' Home Page."
+      description_1: " Join us for more courses and programs from the world's best universities!"
+    help:
+      helppages: "Help"
+      title: "Help"
+      description: "Faced problems? Do you need help?"
+      description_1: "Get help through our "
+      email: "Email"
+    about:
+      aboutpages: "About"
+      title: "About"
+      description: "This is the about page for this Online Courses."
