@@ -4,6 +4,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "2.7.1"
 
 gem "autoprefixer-rails", "~> 9.8", ">= 9.8.6.4"
+gem "bcrypt", "~> 3.1.13"
 gem "bootstrap", "~> 4.5", ">= 4.5.2"
 gem "bootsnap", ">= 1.4.8", require: false
 gem "config"

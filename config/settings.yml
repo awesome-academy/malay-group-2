@@ -1,3 +1,12 @@
 online_courses:
   help:
     mail: mailto:weilingooi62@gmail.com
+
+validations:
+  name:
+    max_length: 50
+  email:
+    max_length: 50
+    regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
+  password:
+    min_length: 6

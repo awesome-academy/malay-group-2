@@ -1,21 +1,21 @@
 default: &default
   adapter: mysql2
-  encoding: utf8
+  encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: password
-  socket: /tmp/mysql.sock
+  username: "YOUR USERNAME"
+  password: "YOUR OWN PASSWORD"
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: sample_app
+  database: malay-group-2_development
 
 test:
   <<: *default
-  database: sample_app_test
+  database: malay-group-2_test
 
 production:
   <<: *default
-  database: sample_app_production
-  username: username
-  password: pass
+  database: malay-group-2_production
+  username: malay-group-2
+  password: "YOUR OWN PASSWORD"
