@@ -32,6 +32,12 @@
 en:
   hello: "Hello world"
 
+  controllers:
+    users:
+      user_not_found: "User not found!"
+      welcome: "Welcome to Online Courses!"
+      acc_reg_failed: "Account registration failed"
+
   layouts:
     application:
       title: "Online Courses"
@@ -53,3 +59,10 @@ en:
       aboutpages: "About"
       title: "About"
       description: "This is the about page for this Online Courses."
+  
+  users:
+    new:
+      sign_up: "Sign Up"
+      the_form_contains: "The form contains "
+      confirmation: "Confirmation"
+      create_acc: "Create my account"

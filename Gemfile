@@ -5,7 +5,7 @@ ruby "2.7.1"
 
 gem "autoprefixer-rails", "~> 9.8", ">= 9.8.6.4"
 gem "bcrypt", "~> 3.1.13"
-gem "bootstrap", "~> 4.5", ">= 4.5.2"
+gem "bootstrap-sass", "~> 3.4.1"
 gem "bootsnap", ">= 1.4.8", require: false
 gem "config"
 gem "figaro", "~> 1.2"
