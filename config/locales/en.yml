@@ -33,6 +33,8 @@ en:
   hello: "Hello world"
 
   controllers:
+    sessions:
+      invalid_email_password: "Invalid email/password combination"
     users:
       user_not_found: "User not found!"
       welcome: "Welcome to Online Courses!"
@@ -59,10 +61,27 @@ en:
       aboutpages: "About"
       title: "About"
       description: "This is the about page for this Online Courses."
-  
+    application:
+      login: "Log In"
+      logout: "Log Out"
+
+  sessions:
+    new:
+      login: "Log In"
+      remember_me: "Remember me on this device"
+      new_user: "New user?"
+      sign_up_now: "Sign up now!"
+
   users:
     new:
       sign_up: "Sign Up"
       the_form_contains: "The form contains "
       confirmation: "Confirmation"
       create_acc: "Create my account"
+    
+  reviews:
+    new:
+      add: "add review"
+      new_review: "New Review"
+      create_review: "Create review"
+end

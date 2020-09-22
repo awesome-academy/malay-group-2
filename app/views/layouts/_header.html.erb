@@ -6,7 +6,11 @@
         <li><%= link_to t("static_pages.home.homepages"), root_path %></li> 
         <li><%= link_to t("static_pages.help.helppages"), help_path %></li> 
         <li><%= link_to t("static_pages.about.aboutpages"), about_path %></li> 
-        <li><%= link_to t("static_pages.application.login"), "#" %></li>
+        <% if logged_in? %>
+          <li><%= link_to t("static_pages.application.logout"), logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to t("static_pages.application.login"), login_path %></li>
+        <% end %>
       </ul> 
     </nav>
   </div>
