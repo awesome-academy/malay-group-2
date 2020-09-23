@@ -78,3 +78,10 @@ en:
       the_form_contains: "The form contains "
       confirmation: "Confirmation"
       create_acc: "Create my account"
+    
+  reviews:
+    new:
+      add: "add review"
+      new_review: "New Review"
+      create_review: "Create review"
+end
