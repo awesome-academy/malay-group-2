@@ -33,12 +33,21 @@ en:
   hello: "Hello world"
 
   controllers:
+    acc_activation:
+      acc_activated: "Your account has been activated successfully!"
+      invalid_link: "Invalid activation link"
     sessions:
       invalid_email_password: "Invalid email/password combination"
+      acc_not_activated: "Your account is not activated! Please check your email for activation link."
     users:
       user_not_found: "User not found!"
       welcome: "Welcome to Online Courses!"
       acc_reg_failed: "Account registration failed"
+      please_check_activate: "Please check your email for activation link"
+  
+  mailers:
+    user:
+      subject: "Online Courses Account Activation"
 
   layouts:
     application:
@@ -72,6 +81,17 @@ en:
       new_user: "New user?"
       sign_up_now: "Sign up now!"
 
+  user_mailer:
+    acc_activation:
+      html:
+        header: "Online Course"
+        hi: "Hi"
+        content: "Welcome to Online Course. Please click the link below to activate your account: "
+        button: "Activate"
+      text:
+        hi: "Hi"
+        content: "Welcome to Online Course. Please click the link below to activate your account: "
+
   users:
     new:
       sign_up: "Sign Up"
@@ -84,4 +104,3 @@ en:
       add: "add review"
       new_review: "New Review"
       create_review: "Create review"
-end
