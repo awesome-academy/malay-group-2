@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :set_user, expect: %i(:new, :create, :index)
+
+  before_action :authenticate_user! , only: %i(:edit, :update , :destroy)
+
+  before_action :check_permitted_or_not , only: %i(:edit , :destroy)
+
   def index; end
   
   def show
@@ -13,6 +19,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit; end
+
   def create
     @user = User.new user_params
     if @user.save
@@ -25,8 +33,55 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: t("controller.users.update") }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    respond_to do |format|
+      if @user.destroy
+        format.html { redirect_to users_url, notice: t("controller.users.delete") }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to users_url, notice: t("controller.users.not_delete")}
+        format.json { head :no_content }
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit :name, :email, :password, :password_confirmation
   end
-end
+
+  def set_user
+    @user = User.find_by id: params[:id]
+    return if @user
+  end
+
+  def check_permitted_or_not
+    if @user.id != current_user.id
+      redirect_to users_path
+    end
+  end
+
+  def authenticate_user!
+    if @user
+      session[:user_id] = user.id
+      render json: {
+        status: :created,
+        logged_in: true,
+        user: user
+      }
+    else
+      render json: { status: 401 }
+    end
+  end
+  
