@@ -36,6 +36,12 @@ en:
     acc_activation:
       acc_activated: "Your account has been activated successfully!"
       invalid_link: "Invalid activation link"
+    courses:
+      create: "Course was successfully created."
+      updated: "Course was successfully updated."
+      destroy: "Course was successfully destroyed."
+      not_destroy: "Your course is failed to destroy"
+      not_found: "Course not found"
     sessions:
       invalid_email_password: "Invalid email/password combination"
       acc_not_activated: "Your account is not activated! Please check your email for activation link."
@@ -44,6 +50,40 @@ en:
       welcome: "Welcome to Online Courses!"
       acc_reg_failed: "Account registration failed"
       please_check_activate: "Please check your email for activation link"
+      update: "User was successfully updated."
+      delete: "User was successfully destroyed."
+      not_delete: "User was failed to destroyed."
+
+  courses: 
+    error: "Error"
+    description: "prohibited this course from being saved:"
+    message: "Message"
+    edit: 
+      title: "Editing Course"
+      show: "Show"
+      back: "Back"
+    index:
+      listing: "Listing Courses"
+      title: "Title"
+      creator: "Creator"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirmation: "Are you sure?"
+      new: "New Course"
+    new:
+      newcourses: "New Course"
+      back: "Back"
+    show:
+      course: "Course"
+      edit: "Edit"
+      lecture: "Add Lecture"
+      back: "Back"
+      description: "lectures under this course:"
+    course:
+      view_detail: "View Course Details"
+      update_course: "| Update the Course"
+      delete_course: "Delete Course"
   
   mailers:
     user:
@@ -54,7 +94,15 @@ en:
       title: "Online Courses"
       login: "Log In"
 
+  reviews:
+    new:
+      add: "add review"
+      new_review: "New Review"
+      create_review: "Create review"
+
   static_pages:
+    courses:
+      coursespages: "Courses"
     home:
       homepages: "Home"
       title: "Online Courses"
@@ -98,9 +146,3 @@ en:
       the_form_contains: "The form contains "
       confirmation: "Confirmation"
       create_acc: "Create my account"
-    
-  reviews:
-    new:
-      add: "add review"
-      new_review: "New Review"
-      create_review: "Create review"
