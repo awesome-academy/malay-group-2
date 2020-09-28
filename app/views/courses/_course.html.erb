@@ -7,6 +7,11 @@
   </p>
 
   <%= link_to t("courses.course.view_detail"), course %> 
+  
+  <%= render @course.reviews %>
+  <p>
+    <%= link_to t("reviews.new.add"), new_course_review_path(@course) %>
+  </p>
 
   <% if current_user.admin? %>
     <%= link_to t("courses.course.update_course"), edit_course_path(course) %> |

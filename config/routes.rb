@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get "/courses", to: "courses#show"
   post "/courses", to: "courses#create"
   resources :users
-  resources :reviews
   resources :account_activations, only: :edit
-  resources :courses
+  resources :courses do
+    resources :reviews
+  end
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end

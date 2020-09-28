@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, except: %i(new create show)
   before_action :authenticate_user!
-  before_action :check_permitted_or_not , only: %i(:edit , :destroy)
+  before_action :check_permitted_or_not , only: %i(edit destroy)
 
   def index
     @courses = Course.recent_courses.page params[:page]
@@ -93,4 +93,4 @@ class CoursesController < ApplicationController
       redirect_to courses_path
     end
   end
-  
+end

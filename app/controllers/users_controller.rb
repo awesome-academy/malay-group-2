@@ -53,6 +53,7 @@ class UsersController < ApplicationController
       else
         format.html { redirect_to users_url, notice: t("controller.users.not_delete")}
         format.json { head :no_content }
+      end  
     end
   end
 
@@ -84,4 +85,4 @@ class UsersController < ApplicationController
       render json: { status: 401 }
     end
   end
-  
+end
