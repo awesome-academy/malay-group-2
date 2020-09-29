@@ -115,7 +115,11 @@ en:
     new:
       add: "add review"
       new_review: "New Review"
-      create_review: "Create review"
+      create_review: "Create Review"
+      edit_review: "Edit Review"
+      edit: "Edit"
+      delete: "Delete"
+      confirmation: "Are you sure?"
 
   static_pages:
     courses:
