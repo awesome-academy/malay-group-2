@@ -2,10 +2,6 @@
 <h1><%= t".new_review" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @review do |f| %>
-      <%= f.label :comment %>
-      <%= f.text_field :comment %>
-      <%= f.submit t(".create_review"), class: "btn btn-primary" %>
-    <% end %>
+    <%= render "form" %>
   </div>
 </div>

@@ -58,6 +58,7 @@ en:
       update: "User was successfully updated."
       delete: "User was successfully destroyed."
       not_delete: "User was failed to destroyed."
+      update: "Please log in"
 
   courses: 
     error: "Error"
@@ -67,8 +68,11 @@ en:
       title: "Editing Course"
       show: "Show"
       back: "Back"
+      update_course: "Update the course"
+      updating_course: "Updating the course"
     index:
       listing: "Listing Courses"
+      create: "Create"
       title: "Title"
       creator: "Creator"
       show: "Show"
@@ -80,11 +84,15 @@ en:
       newcourses: "New Course"
       back: "Back"
     show:
-      course: "Course"
-      edit: "Edit"
-      lecture: "Add Lecture"
-      back: "Back"
-      description: "lectures under this course:"
+      course: "Course:"
+      status: "Status:"
+      start: "Started at:"
+      member: "Members:"
+      description: "Description:"
+      duration: "Duration:"
+      month: " Months(s)"
+
+
     course:
       view_detail: "View Course Details"
       update_course: "| Update the Course"
@@ -115,7 +123,11 @@ en:
     new:
       add: "add review"
       new_review: "New Review"
-      create_review: "Create review"
+      create_review: "Create Review"
+      edit_review: "Edit Review"
+      edit: "Edit"
+      delete: "Delete"
+      confirmation: "Are you sure?"
 
   static_pages:
     courses:
@@ -138,6 +150,12 @@ en:
     application:
       login: "Log In"
       logout: "Log Out"
+    account: "Account"
+    users:
+      user: "User"
+      profile: "Profile"
+      settings: "Settings"
+      courses: "Courses"
 
   sessions:
     new:
@@ -170,3 +188,20 @@ en:
       the_form_contains: "The form contains "
       confirmation: "Confirmation"
       create_acc: "Create my account"
+      login: "Log In"
+      forget_password: "Forget the password?"
+      remember_me: "Remember me on this device"
+      new_user: "New user?"
+      sign_up_now: "Sign Up Now!"
+    user:
+      delete: "Delete"
+      confirm: "Confirm"
+    edit:
+      title: "Edit"
+      update: "Update"
+      gravatar: "Gravatar"
+    index:
+      title: "User's Profile"
+    form:
+      confirmation: "Confirmation"
+

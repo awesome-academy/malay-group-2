@@ -1,6 +1,11 @@
+<% provide :title, t"courses.edit.update_course" %>
+<% provide :button_text, t"courses.editupdating_course" %>
 <h1><%= t "courses.edit.title"%></h1>
 
-<%= render "form" %>
-
-<%= link_to t "edit.show", @course %> |
-<%= link_to t "edit.back", courses_path %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "form" %>
+    <%= link_to t "edit.show", @course %> |
+    <%= link_to t "edit.back", courses_path %>
+  </div>
+</div>

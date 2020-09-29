@@ -1,10 +1,9 @@
 class CoursesController < ApplicationController
   before_action :set_course, except: %i(new create show)
-  before_action :authenticate_user!
-  before_action :check_permitted_or_not , only: %i(:edit , :destroy)
+  before_action :check_permitted_or_not , only: %i(edit destroy)
 
   def index
-    @courses = Course.recent_courses.page params[:page]
+    @course = Course.recent_courses.page params[:page]
   end
 
   def show; end
@@ -32,7 +31,7 @@ class CoursesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @course.update(course_params)
+      if @course.update course_params
         format.html { redirect_to @course, notice: t("controller.course.updated") }
         format.json { render :show, status: :ok, location: @course }
       else
@@ -50,21 +49,19 @@ class CoursesController < ApplicationController
       else
         format.html {redirect_to courses_path, notice: t("controller.course.not_destroy")}
         format.json { head :no_content }
+      end
     end
   end
 
   private
 
   def course_params
-    params.require :course.permit :title,:user_id
+    params.require :course.permit :title,:description,:started_at, :member, :status, :total_month
   end
 
   def set_course
-    @course = Course.find_by(params[:user_id])
+    @course = Course.find_by id: params[:id]
     return if @course
-
-    flash[:warning] = t"not_found"
-    redirect_to root_path
   end
 
   def check_permitted_or_not
@@ -75,22 +72,8 @@ class CoursesController < ApplicationController
     end
   end
   
-  def authenticate_user!
-    if current_user
-      session[:user_id] = current_user.id
-      render json: {
-        status: :created,
-        logged_in: true,
-        user: user
-      }
-    else
-      render json: { status: 401 }
-    end
-  end
-  
   def check_permitted_manage_courses_or_not
     redirect_to courses_path if current_user.usertype == 1
       redirect_to courses_path
     end
   end
-  

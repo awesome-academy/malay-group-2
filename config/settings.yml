@@ -2,6 +2,11 @@ online_courses:
   help:
     mail: mailto:weilingooi62@gmail.com
 
+links:
+  manual_form_description: "#"
+  gravatar: "https://secure.gravatar.com/avatar/"
+  gravatar_email: "http://gravatar.com/emails"
+
 validations:
   name:
     max_length: 50
@@ -13,5 +18,9 @@ validations:
   course:
     min_length: 5
     max_length: 300
+
+gravartar:
+  size_default: 80
+  size_list: 50
 
 remember_me: 1

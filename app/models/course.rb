@@ -10,8 +10,5 @@ class Course < ApplicationRecord
   validates :title, presence: true, length:{ minimum: Settings.validations.course.min_length, maximum: Settings.validations.course.max_length }
   validates_uniqueness_of :title
 
-  belongs_to :user
-
-  has_many :likes
-  has_many :users, :through => :likes  
+  has_rich_text :description
 end

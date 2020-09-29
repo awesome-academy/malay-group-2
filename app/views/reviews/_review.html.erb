@@ -1,1 +1,12 @@
 <p><%= review.comment %></p>
+
+<% if user_signed_in? %>
+  <% if review.user_id == current_user.id %>
+    <%= link_to t("edit"), edit_course_review_path(review.course, review) %>
+    <%= link_to t("delete"), course_review_path(review.course, review), method::delete, data: {confirm: t("confirmation")} %>
+  <% end %>
+
+  <% if current_user.admin? %>
+    <%= link_to t("delete"), course_review_path(review.course, review), method::delete, data: {confirm: t("confirmation")} %>
+  <% end %>
+<% end %>

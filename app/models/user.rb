@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
+  before_save :downcase_email
+  before_create :create_activation_digest
 
   validates :name, presence: true,
              length: { maximum: Settings.validations.name.max_length }
@@ -16,9 +18,6 @@ class User < ApplicationRecord
   has_secure_password
   has_many :courses
   has_many :reviews
-
-  before_save :downcase_email
-  before_create :create_activation_digest
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : 
@@ -57,7 +56,7 @@ class User < ApplicationRecord
 
   def create_reset_digest
     self.reset_token = User.new_token
-    update_attributes reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
+    update_columns reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
   end
 
   def send_password_reset_email
