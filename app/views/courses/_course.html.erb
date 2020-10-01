@@ -6,7 +6,7 @@
     <%= course.status %>
   </p>
 
-  <%= link_to t("courses.course.view_detail"), course %> 
+  <%= link_to t("courses.course.view_detail"), course, class: "btn btn-primary btn-sm" %> 
   
   <%= render @course.reviews %>
   <p>
@@ -14,7 +14,7 @@
   </p>
 
   <% if current_user.admin? %>
-    <%= link_to t("courses.course.update_course"), edit_course_path(course) %> |
-    <%= link_to t("courses.course.delete_course"), course, method: :delete,data: { confirm: "You sure?" } %>
+    <%= link_to t("courses.course.update_course"), edit_course_path(course), class: "btn btn-primary btn-sm"  %> |
+    <%= link_to t("courses.course.delete_course"), course, method: :delete,data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
   <% end %>
 </li>

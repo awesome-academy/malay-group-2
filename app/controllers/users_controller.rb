@@ -1,11 +1,16 @@
 class UsersController < ApplicationController
-  before_action :set_user, expect: %i(:new, :create, :index)
+  before_action :set_user, expect: %i(new create index)
+  before_action :authenticate_user! , only: %i(edit update destroy)
+  before_action :check_permitted_or_not , only: %i(edit update)
+  before_action :admin_user, only: :destroy
 
-  before_action :authenticate_user! , only: %i(:edit, :update , :destroy)
+  def new
+    @user = User.new
+  end
 
-  before_action :check_permitted_or_not , only: %i(:edit , :destroy)
-
-  def index; end
+  def index
+    @users = User.order(:name).page(params[:page]).per Settings.default_page.users
+  end
   
   def show
     @user = User.find_by id: params[:id]
@@ -13,10 +18,6 @@ class UsersController < ApplicationController
 
     flash[:danger] = t "controllers.users.user_not_found"
     redirect_to root_path
-  end
-
-  def new
-    @user = User.new
   end
 
   def edit; end
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: t("controller.users.update") }
+        format.html { redirect_to @user, notice: t("controllers.users.update") }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -48,10 +49,10 @@ class UsersController < ApplicationController
   def destroy
     respond_to do |format|
       if @user.destroy
-        format.html { redirect_to users_url, notice: t("controller.users.delete") }
+        format.html { redirect_to users_url, notice: t("controllers.users.delete") }
         format.json { head :no_content }
       else
-        format.html { redirect_to users_url, notice: t("controller.users.not_delete")}
+        format.html { redirect_to users_url, notice: t("controllers.users.not_delete")}
         format.json { head :no_content }
       end  
     end
@@ -84,5 +85,9 @@ class UsersController < ApplicationController
     else
       render json: { status: 401 }
     end
+  end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
 end

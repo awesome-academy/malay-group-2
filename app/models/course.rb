@@ -12,7 +12,8 @@ class Course < ApplicationRecord
 
   belongs_to :user
 
-  has_many :likes
-  has_many :users, :through => :likes  
-  has_many :reviews
+  has_many :courses
+  has_many :reviews, dependent: :destroy
+
+  has_rich_text :description
 end
