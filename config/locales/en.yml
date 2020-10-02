@@ -67,24 +67,22 @@ en:
       title: "Editing Course"
       show: "Show"
       back: "Back"
+      update: "Update:"
     index:
       listing: "Listing Courses"
-      title: "Title"
-      creator: "Creator"
-      show: "Show"
-      edit: "Edit"
-      destroy: "Destroy"
-      confirmation: "Are you sure?"
-      new: "New Course"
+      title: "Courses"
+      create: "Create"
     new:
       newcourses: "New Course"
       back: "Back"
     show:
-      course: "Course"
-      edit: "Edit"
-      lecture: "Add Lecture"
-      back: "Back"
-      description: "lectures under this course:"
+      course: "Course: "
+      status: "Status: "
+      start: "Started at:"
+      member: "Members:"
+      duration: "Duration:"
+      month: " Month(s)"
+      description: "Description:"
     course:
       view_detail: "View Course Details"
       update_course: "| Update the Course"
@@ -142,6 +140,12 @@ en:
     application:
       login: "Log In"
       logout: "Log Out"
+    layout:
+      users: "User"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      courses: "Courses"
 
   sessions:
     new:
@@ -171,6 +175,19 @@ en:
   users:
     new:
       sign_up: "Sign Up"
-      the_form_contains: "The form contains "
       confirmation: "Confirmation"
       create_acc: "Create my account"
+      login: "Log In"
+      forget_password: "Forget your password?"
+      remember_me: "Remember me on this device"
+      new_user: "New User?"
+      sign_up_now: "Sign up now!"
+    user:
+      delete: "Delete"
+      confirm: "Delete Confirmation"
+    index:
+      title: "User's Profile"
+    edit:
+      title: "Editing Courses"
+      update: "Update Your Courses"
+      gravatar: "Gravatar"

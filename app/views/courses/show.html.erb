@@ -1,19 +1,10 @@
-<% provide :title, @course %>
-<p id="notice"><%= notice %></p>
-<div class="jumbotron">
-  <h1><%= t "courses.show.course"  %></h1>
-    <% if @course.try(:user).try(:id) == current_user.try(:id) && current_user.try(:usertype)  == 2 %>
-	  <span><%= link_to t("courses.show.edit"), edit_course_path(@course) ,class: "btn btn-primary btn-lg homebuttons" %></span> 
-	  <span><%= link_to t("courses.show.lecture"), new_lecture_path(@course) ,class: "btn btn-danger btn-lg homebuttons" %> </span>
-    <% end %>
-  <span><%= link_to t("courses.show.back"), courses_path ,class: "btn btn-primary btn-lg homebuttons" %></span>
-<% provide :title, @course.title %>
+<% provide :title, @coursetitle %>
 
 <div>
   <div>
     <h1>
-      <b>t "courses.show.course"</b>
-      <%= @course.title %>
+      <b><%= t"courses.show.course" %></b>
+      <%= @coursetitle %>
     </h1>
 
     <div class="jumbotron">
@@ -21,23 +12,23 @@
         <div class="col-md-6">
           <h4>
             <b><%= t "courses.show.status" %></b>
-            <%= @course.status %><br><br>
+            <%= @coursestatus %><br><br>
 
             <b><%= t "courses.show.start" %></b>
-            <%= @course.started_at %><br><br>
+            <%= @coursestarted_at %><br><br>
 
             <b><%= t "courses.show.member" %></b>
-            <%= @course.member %><br><br>
+            <%= @coursemember %><br><br>
 
             <b><%= t "courses.show.description" %></b>
-            <%= @course.description %>
+            <%= @coursedescription %>
           </h4>
         </div>
 
         <div class="col-md-6">
           <h4>
             <b><%= t "courses.show.duration" %></b>
-            <%= @course.total_month %><%= t "courses.show.month" %>
+            <%= @coursetotal_month %><%= t "courses.show.month" %>
           </h4>
         </div>
       </div>

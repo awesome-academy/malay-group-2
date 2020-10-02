@@ -1,24 +1,21 @@
 <%= form_for @course do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@course.errors.count, t "courses.error") %>
-        <%= t"courses.description"%> 
-      </h2>
-
-      <ul>
-        <% @course.errors.full_messages.each do |message| %>
-        <li><%= t "courses.message" %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render "shared/error_messages", object: f.object %>
   
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title %>
     <%= f.text_field :title %>
+    <%= f.label :started_at %>
+    <%= f.date_field :started_at, class: "form-control" %>
+    <%= f.label :total_month %>
+    <%= f.number_field :total_month, class: "form-control" %>
+    <%= f.label :member %>
+    <%= f.number_field :member, class: "form-control" %>
+    <%= f.label :status %><br>
+    <%= f.select :status, Course.statuses.keys %>
+    <%= f.label :description %>
+    <%= f.rich_text_area :description, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   </div>
 <% end %>

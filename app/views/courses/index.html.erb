@@ -1,39 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<% if @courses.count > 0 %>
+<% provide :title, t("courses.index.title") %>
 <h1><%= t "courses.index.listing" %></h1>
-<% end %>
 
-<table class="table table-bordered" >
-  <thead>
-    <tr>
-      <th><%= t "courses.index.title" %></th>
-      <th><%= t "courses.index.creator" %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= paginate @course %>
 
-  <tbody>
-    <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.try(:title) %></td>
-        <td><%= course.try(:user).try(:name) %></td>
-        <td><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> <span class="glyphicon-class"><%= link_to t("layouts.courses.index.show"), course_path(course)
-         %></td> </span></td>    
-
-        <% if course.try(:user).try(:id) == current_user.try(:id) && current_user.try(:usertype)  == 2 %>
-
-          <td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <span class="glyphicon-class"><%= link_to t( "courses.index.edit"), edit_course_path(course) %> </span></td>
-
-          <td><span class="glyphicon glyphicon-off" aria-hidden="true"></span> <span class="glyphicon-class"><%= link_to t("courses.index.destroy"), course, method: :delete, data: { confirm: t "courses.index.confirmation" } %></span></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<% if current_user.try(:id) && current_user.try(:usertype)  == 2 %>
-  <%= link_to t("courses.index.new"), new_course_path , class: "btn btn-primary btn-lg homebuttons" %>
-<% end %>
+<ul class="courses">
+  <%= render @course %>
+</ul>
