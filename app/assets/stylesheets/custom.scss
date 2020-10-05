@@ -88,6 +88,57 @@ textarea {
   text-decoration: none;  
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: red;
+  padding: 10px;
+}
+
+.dropdown .dropbtn {
+  font-size: 14px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 12px 14px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.nav :hover, .dropdown:hover .dropbtn {
+  background-color: #33d5ff;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 12px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content li {
+  float: none;
+  color: black;
+  padding: 11px 11px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* sidebar */
 aside {
   section.user_info {
@@ -167,3 +218,4 @@ input {
   width: auto;
   margin-left: 0;
 }
+

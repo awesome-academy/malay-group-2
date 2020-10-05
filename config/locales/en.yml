@@ -123,29 +123,29 @@ en:
     courses:
       coursespages: "Courses"
     home:
-      homepages: "Home"
+      homepages: " Home"
       title: "Online Courses"
       description: "Welcome to Online Courses' Home Page."
       description_1: " Join us for more courses and programs from the world's best universities!"
     help:
-      helppages: "Help"
+      helppages: " Help"
       title: "Help"
       description: "Faced problems? Do you need help?"
       description_1: "Get help through our "
       email: "Email"
     about:
-      aboutpages: "About"
+      aboutpages: " About"
       title: "About"
       description: "This is the about page for this Online Courses."
     application:
-      login: "Log In"
-      logout: "Log Out"
+      login: " Log In"
+      logout: " Log Out"
     layout:
-      users: "User"
-      account: "Account"
-      profile: "Profile"
-      settings: "Settings"
-      courses: "Courses"
+      users: " User"
+      account: " Account"
+      profile: " Profile"
+      settings: " Settings"
+      courses: " Courses"
 
   sessions:
     new:
