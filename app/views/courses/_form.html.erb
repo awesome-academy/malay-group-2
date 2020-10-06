@@ -13,7 +13,7 @@
     <%= f.label :status %><br>
     <%= f.select :status, Course.statuses.keys %>
     <%= f.label :description %>
-    <%= f.rich_text_area :description, class: "form-control" %>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>

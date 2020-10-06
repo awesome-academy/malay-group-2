@@ -18,6 +18,7 @@ gem "rails", "~> 6.0.3", ">= 6.0.3.3"
 gem "sass-rails", "~> 6.0"
 gem "sprockets", "~> 4.0", ">= 4.0.2"
 gem "turbolinks", "~> 5.2.1"
+gem "text", "~> 1.3", ">= 1.3.1"
 gem "webpacker", "~> 4.3"
 
 group :development do

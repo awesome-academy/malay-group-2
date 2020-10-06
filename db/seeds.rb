@@ -4,7 +4,6 @@ User.create!(name: "admin",
              password_confirmation: "iamadmin",
              role: 1,
              activated: true,
-             role: 1,
              activated_at: Time.zone.now)
 
 25.times do |n|
