@@ -15,8 +15,7 @@ class CoursesController < ApplicationController
   def edit; end
 
   def create
-    @course = Course.new　course_params
-    @course.user_id = current_user.id
+    @course = Course.new
 
     respond_to do |format|
       if @course.save

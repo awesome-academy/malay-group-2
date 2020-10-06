@@ -3,29 +3,26 @@
     <%= link_to t("layouts.application.title"), "#", id: "logo" %> 
     <nav>
       <ul class="nav navbar-nav navbar-right"> 
-        <li><%= link_to t("static_pages.home.homepages"), root_path %></li> 
-        <li><%= link_to t("static_pages.help.helppages"), help_path %></li> 
-        <li><%= link_to t("static_pages.about.aboutpages"), about_path %></li> 
+        <li><%= link_to t("static_pages.home.homepages"), root_path, class: "glyphicon glyphicon-home" %></li> 
+        <li><%= link_to t("static_pages.help.helppages"), help_path, class: "glyphicon glyphicon-question-sign" %></li> 
+        <li><%= link_to t("static_pages.about.aboutpages"), about_path, class: "glyphicon glyphicon-info-sign" %></li> 
         
         <% if logged_in? %>
-          <li><%= link_to t("static_pages.layout.users"), users_path %></li>
-          <li class="dropdown">
-            <%= link_to "#", {class: "dropdown-toggle", data: {"toggle" =>  "dropdown"}} do %>
-              <%= t "static_pages.layout.account" %>
-              <b class="caret"></b>
-            <% end %>
-            <ul class="dropdown-menu">
+          <li><%= link_to t("static_pages.layout.users"), users_path, class: "glyphicon glyphicon-user" %></li>
+          <div class="dropdown">
+            <button class="dropbtn">Account<i class="caret"></i></button>
+            <div class="dropdown-content">
               <li><%= link_to t("static_pages.layout.profile"), current_user, class: "glyphicon glyphicon-education" %></li>
               <li><%= link_to t("static_pages.layout.settings"), edit_user_path(current_user), class: "glyphicon glyphicon-edit" %></li>
               <li><%= link_to t("static_pages.layout.courses"), courses_path, class: "glyphicon glyphicon-book" %></li>
-              <li class="divider"></li>
+              <div class="divider"></div>
               <li>
               <li><%= link_to t("static_pages.application.logout"), logout_path, class: "glyphicon glyphicon-log-out", method: :delete %>
               </li>
-            </ul>
-          </li>
+            </div>
+          </div>
         <% else %>
-          <li><%= link_to t("static_pages.application.login"), login_path,class: "glyphicon glyphicon-user" %></li>
+          <li><%= link_to t("static_pages.application.login"), login_path,class: "glyphicon glyphicon-log-in" %></li>
         <% end %>
       </ul> 
     </nav>
