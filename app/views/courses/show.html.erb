@@ -1,10 +1,10 @@
-<% provide :title, @coursetitle %>
+<% provide :title, @course.title %>
 
 <div>
   <div>
     <h1>
       <b><%= t"courses.show.course" %></b>
-      <%= @coursetitle %>
+      <%= @course.title %>
     </h1>
 
     <div class="jumbotron">
@@ -12,23 +12,23 @@
         <div class="col-md-6">
           <h4>
             <b><%= t "courses.show.status" %></b>
-            <%= @coursestatus %><br><br>
+            <%= @course.status %><br><br>
 
             <b><%= t "courses.show.start" %></b>
-            <%= @coursestarted_at %><br><br>
+            <%= @course.started_at %><br><br>
 
             <b><%= t "courses.show.member" %></b>
-            <%= @coursemember %><br><br>
+            <%= @course.member %><br><br>
 
             <b><%= t "courses.show.description" %></b>
-            <%= @coursedescription %>
+            <%= @course.description %>
           </h4>
         </div>
 
         <div class="col-md-6">
           <h4>
             <b><%= t "courses.show.duration" %></b>
-            <%= @coursetotal_month %><%= t "courses.show.month" %>
+            <%= @course.total_month %><%= t "courses.show.month" %>
           </h4>
         </div>
       </div>

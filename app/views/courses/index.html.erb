@@ -1,8 +1,9 @@
 <% provide :title, t("courses.index.title") %>
 <h1><%= t "courses.index.listing" %></h1>
 
-<%= paginate @course %>
-
 <ul class="courses">
   <%= render @course %>
 </ul>
+
+
+<%= paginate @course %>

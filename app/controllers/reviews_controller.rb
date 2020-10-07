@@ -39,10 +39,10 @@ class ReviewsController < ApplicationController
   end	
   
   def find_course
-    @course = Course.find_by id: params [:course_id]
+    @course = Course.find_by id: params[:course_id]
   end
 
   def find_review
-    @review = Review.find_by id: params [:id]
+    @review = Review.find_by id: params[:id]
   end
 end

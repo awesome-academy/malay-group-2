@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
-  get "/courses", to: "courses#show"
+  get "/logout", to: "sessions#destroy"
+  get "/courses", to: "courses#index"
   post "/courses", to: "courses#create"
   resources :users
   resources :account_activations, only: :edit

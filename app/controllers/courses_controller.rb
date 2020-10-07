@@ -7,15 +7,21 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @course = Course.recent_courses.page(params[:page]).per Settings.default_pages.courses
+    @course = Course.recent_courses.page(params[:page]).per Settings.default_page.courses
   end
 
-  def show; end
+  def show
+    @course = Course.find_by id: params[:id]
+    return if @course
+
+    flash[:danger] = t "controllers.courses.not_found"
+    redirect_to courses_path
+  end
 
   def edit; end
 
   def create
-    @course = Course.new
+    @course = Course.new course_params
 
     respond_to do |format|
       if @course.save
@@ -60,10 +66,6 @@ class CoursesController < ApplicationController
 
   def set_course
     @course = Course.find_by id: params[:id]
-    return if @course
-    
-    flash[:warning] = t"controllers.courses.not_found"
-    redirect_to root_path
   end
 
   def check_permitted_or_not

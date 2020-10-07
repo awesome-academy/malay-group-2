@@ -16,7 +16,6 @@ validations:
   password:
     min_length: 6
   course:
-    min_length: 5
     max_length: 300
 
 gravartar:
@@ -26,6 +25,6 @@ gravartar:
 remember_me: 1
 
 default_page:
-  courses: 5
+  courses: 10
   users: 10
 
