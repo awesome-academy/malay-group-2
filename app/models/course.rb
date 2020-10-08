@@ -12,4 +12,5 @@ class Course < ApplicationRecord
 
   has_many :courses
   has_many :reviews, dependent: :destroy
+  has_many :registers, dependent: :destroy
 end

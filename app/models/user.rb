@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :courses
   has_many :reviews
+  has_many :registers, dependent: :destroy
 
   before_save :downcase_email
   before_create :create_activation_digest

@@ -1,0 +1,13 @@
+<%= form_for [@course, @course.registers.build] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>
