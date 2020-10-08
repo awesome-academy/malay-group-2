@@ -230,9 +230,9 @@ en:
     index:
       title: "User's Profile"
     edit:
-      title: "Editing Courses"
-      update: "Update Your Courses"
-      gravatar: "Gravatar"
+      title: "Editing Profile"
+      update: "Update Your Profile"
+      gravatar: "Update Gravatar"
     show:
       manage: "Manage users' course"
       check: "check your course"
