@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_02_005920) do
+ActiveRecord::Schema.define(version: 2020_10_07_161739) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 2020_10_02_005920) do
     t.datetime "started_at"
   end
 
+  create_table "registers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "status"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "course_id"
+    t.string "name"
+    t.string "email"
+    t.index ["user_id"], name: "index_registers_on_user_id"
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
@@ -75,8 +86,10 @@ ActiveRecord::Schema.define(version: 2020_10_02_005920) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.integer "role", default: 0
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "registers", "users"
 end

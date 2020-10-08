@@ -15,6 +15,7 @@ gem "kaminari"
 gem "mysql2", "~> 0.5.3"
 gem "puma", "~> 4.3.6"
 gem "rails", "~> 6.0.3", ">= 6.0.3.3"
+gem "rails-i18n", "~> 6.0"
 gem "sass-rails", "~> 6.0"
 gem "sprockets", "~> 4.0", ">= 4.0.2"
 gem "turbolinks", "~> 5.2.1"
@@ -22,10 +23,12 @@ gem "text", "~> 1.3", ">= 1.3.1"
 gem "webpacker", "~> 4.3"
 
 group :development do
+  gem "pry"
   gem "listen", "~> 3.2.1"
   gem "spring", "~> 2.1", ">= 2.1.1"
   gem "spring-watcher-listen", "~> 2.0.1"
   gem "web-console", ">= 4.0.4"
+  gem "pry-rails"
 end
 
 group :test do

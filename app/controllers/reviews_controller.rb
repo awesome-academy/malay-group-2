@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :find_course
-  before_action :find_review, only: %(edit update destroy)
+  before_action :find_review, only: %i(edit update destroy)
 
   def new
     @review = Review.new
@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.course_id = @course.id
     @review.user_id = current_user.id
     if @review.save
-  	  redirect_to user_path
+  	  redirect_to course_path(@course)
     else
   	  render :new
     end
@@ -28,6 +28,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find_by id: params[:id]
     @review.destroy
     redirect_to course_path(@course)
   end

@@ -1,12 +1,10 @@
 <p><%= review.comment %></p>
 
-<% if user_signed_in? %>
-  <% if review.user_id == current_user.id %>
-    <%= link_to t("edit"), edit_course_review_path(review.course, review) %>
-    <%= link_to t("delete"), course_review_path(review.course, review), method::delete, data: {confirm: t("confirmation")} %>
-  <% end %>
-
-  <% if current_user.admin? %>
-    <%= link_to t("delete"), course_review_path(review.course, review), method::delete, data: {confirm: t("confirmation")} %>
+<% if logged_in? %>
+  <% if (review.user_id == current_user.id) || current_user.admin? %>
+    <% if review.user_id == current_user.id %>
+      <%= link_to t("edit"), edit_course_review_path(review.course, review) %>
+    <% end %>
+    <%= link_to "Delete", course_review_path(course_id: review.course.id, id: review), method: :delete, data: {confirm: "Are you sure?"} %>
   <% end %>
 <% end %>

@@ -1,0 +1,17 @@
+<% provide :title, t("registers.edit.title") %>
+<% provide :button_text, t("registers.edit.button") %>
+
+<h1><%= t"registers.edit.header" %><h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@course, @register] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :status %><br>
+      <%= f.select :status, Register.statuses.keys %>
+      
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+ </div>
+</div>
