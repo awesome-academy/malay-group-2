@@ -14,17 +14,8 @@
   <%= t "users.show.manage" %>
   <%= render Register.pending %>
 
-  <%= t "users.show.check" %>
-  <p><%= t "users.show.pending" %></p>
-  <li> <%= render @user.registers.pending %></li>
-
-  <p><%= t "users.show.register_success" %></p>
-  <li><%= render @user.registers.approved %></li>
-
-  <p><%= t "users.show.register_fail" %></p>
-  <li><%= render @user.registers.rejected %></li>
-
 <% else %>
+  <%= t "users.show.check" %>
   <p><%= t "users.show.pending" %></p>
   <li> <%= render @user.registers.pending %></li>
 
