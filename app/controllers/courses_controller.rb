@@ -69,15 +69,8 @@ class CoursesController < ApplicationController
   end
 
   def check_permitted_or_not
-    if current_user
-      if @course.try(:user).try(:id) != current_user.id
-        redirect_to courses_path()
-      end
-    end
+    return unless current_user.is_admin?
+    flash[:danger] = "You dont have permission"
+    redirect_to courses_path
   end
-  
-  def check_permitted_manage_courses_or_not
-    redirect_to courses_path if current_user.usertype == 1
-      redirect_to courses_path
-    end
-  end
+end

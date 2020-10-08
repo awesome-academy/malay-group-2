@@ -23,10 +23,12 @@ gem "text", "~> 1.3", ">= 1.3.1"
 gem "webpacker", "~> 4.3"
 
 group :development do
+  gem "pry"
   gem "listen", "~> 3.2.1"
   gem "spring", "~> 2.1", ">= 2.1.1"
   gem "spring-watcher-listen", "~> 2.0.1"
   gem "web-console", ">= 4.0.4"
+  gem "pry-rails"
 end
 
 group :test do
