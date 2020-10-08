@@ -47,6 +47,28 @@ en:
       email_not_found: "Email address not found"
       reset_success: "Your password has been reset successfully!"
       reset_expired: "This link has expired!"
+    registers:
+      not_found: "Registration not found"
+      create:
+        create_success: "Registration done successfully!"
+        create_fail: "Registration failed. Please Try Again!"
+      destroy:
+        destroy_success: "Register is cancelled"
+        destroy_fail: "ERROR! Register not deleted"
+    reviews:
+      review_not_found: "Review not found"
+      create:
+        review_success: "Review created successfully!"
+        review_fail: "Review is failed to be created! Please Try Again!"
+      update:
+        update_success: "Review is updated successfully!"
+        update_fail: "Review couldn't be updated, Please Try Again!"
+      destroy:
+        review_deleted: "review is deleted"
+        review_not_deleted: "review cannot be deleted"
+      update:
+        status_update: "status updated"
+        status_not_update: "status not updated!"
     sessions:
       invalid_email_password: "Invalid email/password combination"
       acc_not_activated: "Your account is not activated! Please check your email for activation link."
@@ -83,6 +105,13 @@ en:
       duration: "Duration:"
       month: " Month(s)"
       description: "Description:"
+      registers: "Register this course!"
+      reviews: "Add Review here"
+      admin:
+        update: "Update the Courses"
+        view: "View"
+        review: "COURSE REVIEW"
+        pending: "REGISTERED STUDENTS (PENDING)"
     course:
       view_detail: "View Course Details"
       update_course: "| Update the Course"
@@ -118,6 +147,19 @@ en:
       edit: "Edit"
       delete: "Delete"
       confirmation: "Are you sure?"
+
+  registers:
+    new:
+      title: "Registration Details"
+      button: "Register now"
+      details: "Student Details"
+    register:
+      admin: " | Update Registration Status"
+    edit:
+      title: "Registration Status"
+      button: "Update Status"
+      header: "Update Registration Status"
+
 
   static_pages:
     courses:
@@ -191,3 +233,12 @@ en:
       title: "Editing Courses"
       update: "Update Your Courses"
       gravatar: "Gravatar"
+    show:
+      manage: "Manage users' course"
+      check: "check your course"
+      pending: "PENDING REGISTRATION"
+      register_success: "SUCCESSFULL REGISTRATION"
+      register_fail: "FAILED REGISTRATION"
+
+
+

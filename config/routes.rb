@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: :edit
   resources :courses do
     resources :reviews
+    resources :registers
   end
   resources :password_resets, except: %i(index show destroy)
 end
